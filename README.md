@@ -188,3 +188,38 @@ ubuntu@ubuntu:~/docker/containerizeAnApplication$ docker run -it -p 5000:5000 lo
 10.117.148.21 - - [28/Apr/2021 19:07:51] "GET / HTTP/1.1" 200 -
 10.117.148.21 - - [28/Apr/2021 19:07:54] "GET / HTTP/1.1" 200 -
 ```
+
+Step 9 - You can run and use pre-built images that exist on DockerHub.
+
+We have prepared a image that is pretty much the same as above. Run it by automatically pulling that image.
+
+`docker run -it -p 5000:5000 piathalon/containerizeanapplication`
+
+[See DockerHub image here](https://hub.docker.com/r/piathalon/containerizeanapplication)
+
+```
+ubuntu@ubuntu:~$ docker run -it -p 5000:5000 piathalon/containerizeanapplication
+Unable to find image 'piathalon/containerizeanapplication:latest' locally
+latest: Pulling from piathalon/containerizeanapplication
+bd8f6a7501cc: Already exists
+44718e6d535d: Already exists
+efe9738af0cb: Already exists
+f37aabde37b8: Already exists
+3923d444ed05: Already exists
+1ecef690e281: Already exists
+0649c5bd9851: Already exists
+d7a9fa72f192: Already exists
+9de7a5c126e6: Already exists
+1aecdac91f59: Pull complete
+362cbee8d5ee: Pull complete
+a96023accb09: Pull complete
+Digest: sha256:ca03e02df48749672137c449a469985f895b74f4187abee57ab8c9b95c0efa31
+Status: Downloaded newer image for piathalon/containerizeanapplication:latest
+ * Serving Flask app "main"
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+10.117.148.21 - - [28/Apr/2021 19:28:10] "GET / HTTP/1.1" 200 -
+```
